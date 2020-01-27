@@ -8,8 +8,8 @@ import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
 const CREATE_JOURNAL_MUTATION = gql`
-  mutation CREATE_JOURNAL_MUTATION($id: ID, $title: String!, $body: String!) {
-    createJournal(id: $id, title: $title, body: $body) {
+  mutation CREATE_JOURNAL_MUTATION($title: String!, $body: String!) {
+    createJournal(title: $title, body: $body) {
       id
       title
       body
