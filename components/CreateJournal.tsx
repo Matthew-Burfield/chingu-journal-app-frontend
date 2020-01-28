@@ -7,6 +7,8 @@ import Button from "@material-ui/core/Button";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
+import { ALL_JOURNALS_QUERY } from "./JournalEntries";
+
 const CREATE_JOURNAL_MUTATION = gql`
   mutation CREATE_JOURNAL_MUTATION($title: String!, $body: String!) {
     createJournal(title: $title, body: $body) {
@@ -18,10 +20,13 @@ const CREATE_JOURNAL_MUTATION = gql`
 `;
 
 const CreateJournal = () => {
-  const [createJournal] = useMutation(CREATE_JOURNAL_MUTATION);
-  const { register, handleSubmit, watch, errors } = useForm();
+  const [createJournal] = useMutation(CREATE_JOURNAL_MUTATION, {
+    refetchQueries: [{ query: ALL_JOURNALS_QUERY }]
+  });
+  const { register, handleSubmit, reset, errors } = useForm();
   const onSubmit = data => {
     createJournal({ variables: { id: 3, ...data } });
+    reset();
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

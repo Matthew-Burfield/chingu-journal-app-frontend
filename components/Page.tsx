@@ -3,11 +3,11 @@ import Container from "@material-ui/core/Container";
 
 import Header from "./Header";
 
-interface tProps {
+interface Props {
   children: JSX.Element;
 }
 
-const Page = (props: tProps) => (
+const Page = (props: Props) => (
   <>
     <Header />
     <Container maxWidth="sm">{props.children}</Container>
