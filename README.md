@@ -29,6 +29,6 @@ This app was built in a hurry to try and qualify for Voyage 16 so there are stil
 that I'd like to do before I would call this app finished.
 
 1. Edit of journal entries.
-2. A proper landing page
+2. A proper landing page.
 3. Loading states
 4. Better styling and collapsing menu
