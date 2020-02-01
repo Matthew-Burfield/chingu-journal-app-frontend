@@ -12,7 +12,6 @@ import { ALL_JOURNALS_QUERY } from "./JournalEntries";
 const CREATE_JOURNAL_MUTATION = gql`
   mutation CREATE_JOURNAL_MUTATION($title: String!, $body: String!) {
     createJournal(title: $title, body: $body) {
-      id
       title
       body
     }
@@ -25,7 +24,7 @@ const CreateJournal = () => {
   });
   const { register, handleSubmit, reset, errors } = useForm();
   const onSubmit = data => {
-    createJournal({ variables: { id: 3, ...data } });
+    createJournal({ variables: data });
     reset();
   };
   return (
