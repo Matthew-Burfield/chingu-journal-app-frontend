@@ -10,7 +10,7 @@ It is the Journal App as outlined in the solo project specifications.
 ### Frontend
 
 - githup repo: https://github.com/Matthew-Burfield/chingu-journal-app-frontend
-- hosted: https://chingu-journal-app-frontend-hw7qddo4f.now.sh/
+- hosted: https://chingu-journal-app-frontend.now.sh/
 
 ### Backend
 
