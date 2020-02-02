@@ -48,7 +48,6 @@ const JournalEntry = (props: Props) => {
     refetchQueries: [{ query: ALL_JOURNALS_QUERY }]
   });
   const handleDelete = () => {
-    console.log(id, props.journal);
     deleteJournal({ variables: { id } });
   };
   return (
