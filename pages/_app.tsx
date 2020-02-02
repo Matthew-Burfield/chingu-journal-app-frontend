@@ -7,17 +7,17 @@ import withData from "../lib/withData";
 import Page from "../components/Page";
 import theme from "../lib/theme";
 
-interface tPageProps {
+interface PageProps {
   query?: string;
 }
 
-interface tProps {
+interface Props {
   apollo: any;
 }
 
-class MyApp extends App<tProps> {
+class MyApp extends App<Props> {
   static async getInitialProps({ Component, ctx }) {
-    let pageProps: tPageProps = {};
+    let pageProps: PageProps = {};
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
@@ -41,9 +41,7 @@ class MyApp extends App<tProps> {
           <Head>
             <title>Digial Journal</title>
           </Head>
-          <Page>
-            <Component {...pageProps} />
-          </Page>
+          <Component {...pageProps} />
         </ThemeProvider>
       </ApolloProvider>
     );
