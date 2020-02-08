@@ -19,7 +19,8 @@ const CURRENT_USER_QUERY = gql`
 
 const GetLoggedInUser = (props: Props) => (
   <Query query={CURRENT_USER_QUERY}>
-    {({ data }) => {
+    {({ data, loading }) => {
+      if (loading) return null;
       if (data && data.me) return props.children(data.me);
       return props.children(null);
     }}
